@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34407.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Project.10.0", "Src\CSharp\Microsoft.VisualStudio.Project.10.0.csproj", "{CACB60A9-1E76-4F92-8831-B134A658C695}"
 EndProject
@@ -40,6 +40,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Project.UnitTests", "Tests\UnitTests\Microsoft.VisualStudio.Project.UnitTests.csproj", "{7301F66C-FF21-4DC6-8EEE-2BA88186DC16}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Project.IntegrationTests", "Tests\IntegrationTests\Microsoft.VisualStudio.Project.IntegrationTests.csproj", "{0A29E2CA-F59D-4467-8FBC-6CA686CAAA3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Project.16.0", "Src\CSharp\Microsoft.VisualStudio.Project.16.0.csproj", "{45EE8459-DC43-4274-A39E-D00173F3B060}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,10 @@ Global
 		{0A29E2CA-F59D-4467-8FBC-6CA686CAAA3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A29E2CA-F59D-4467-8FBC-6CA686CAAA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A29E2CA-F59D-4467-8FBC-6CA686CAAA3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45EE8459-DC43-4274-A39E-D00173F3B060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45EE8459-DC43-4274-A39E-D00173F3B060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45EE8459-DC43-4274-A39E-D00173F3B060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45EE8459-DC43-4274-A39E-D00173F3B060}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,5 +102,8 @@ Global
 		{07A3CDE4-390B-40B4-A660-8CA586E255CC} = {48341C58-A2FB-46F0-B4FE-239FAC1F848D}
 		{7301F66C-FF21-4DC6-8EEE-2BA88186DC16} = {48341C58-A2FB-46F0-B4FE-239FAC1F848D}
 		{0A29E2CA-F59D-4467-8FBC-6CA686CAAA3B} = {EFCB5A7D-A19D-4998-BD0E-54F1907596E2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88DBF35D-DA7B-4BA2-B100-64A7A7597FBD}
 	EndGlobalSection
 EndGlobal
