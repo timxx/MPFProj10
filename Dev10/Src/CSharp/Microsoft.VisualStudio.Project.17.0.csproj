@@ -49,6 +49,28 @@
     <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
     <NoWarn>$(NoWarn),1573,1591</NoWarn>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;DEV17;DEV10PLUS;DEV11PLUS;DEV12PLUS;DEV16PLUS;DEV17PLUS</DefineConstants>
+    <DocumentationFile>bin\dev17\Debug\Microsoft.VisualStudio.Project.17.0.xml</DocumentationFile>
+    <NoWarn>,1573,1591</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;DEV17;DEV10PLUS;DEV11PLUS;DEV12PLUS;DEV16PLUS;DEV17PLUS</DefineConstants>
+    <DocumentationFile>bin\dev17\Release\Microsoft.VisualStudio.Project.17.0.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>,1573,1591</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
