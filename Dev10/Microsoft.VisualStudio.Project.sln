@@ -1,12 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34407.143
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Project.10.0", "Src\CSharp\Microsoft.VisualStudio.Project.10.0.csproj", "{CACB60A9-1E76-4F92-8831-B134A658C695}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Project.11.0", "Src\CSharp\Microsoft.VisualStudio.Project.11.0.csproj", "{89677F07-52A5-4703-8AC1-D79E637CAE26}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BFD91E69-8642-4EF9-ACFF-022EC41AEFE6}"
 	ProjectSection(SolutionItems) = preProject
 		..\MigrationGuide.md = ..\MigrationGuide.md
@@ -18,8 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C3EC18
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Project.12.0", "Src\CSharp\Microsoft.VisualStudio.Project.12.0.csproj", "{327218DC-7524-4FBC-95EE-36FB933F67B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{64F79670-EDC5-4327-A723-7163B672F9F0}"
 EndProject
@@ -51,18 +45,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CACB60A9-1E76-4F92-8831-B134A658C695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CACB60A9-1E76-4F92-8831-B134A658C695}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CACB60A9-1E76-4F92-8831-B134A658C695}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CACB60A9-1E76-4F92-8831-B134A658C695}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89677F07-52A5-4703-8AC1-D79E637CAE26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89677F07-52A5-4703-8AC1-D79E637CAE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89677F07-52A5-4703-8AC1-D79E637CAE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89677F07-52A5-4703-8AC1-D79E637CAE26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{327218DC-7524-4FBC-95EE-36FB933F67B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{327218DC-7524-4FBC-95EE-36FB933F67B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{327218DC-7524-4FBC-95EE-36FB933F67B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{327218DC-7524-4FBC-95EE-36FB933F67B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F4ADEBDB-CD20-4532-B4E3-FE7424F5369C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F4ADEBDB-CD20-4532-B4E3-FE7424F5369C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4ADEBDB-CD20-4532-B4E3-FE7424F5369C}.Release|Any CPU.ActiveCfg = Release|Any CPU
