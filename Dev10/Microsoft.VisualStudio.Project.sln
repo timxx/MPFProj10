@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Proj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Project.16.0", "Src\CSharp\Microsoft.VisualStudio.Project.16.0.csproj", "{45EE8459-DC43-4274-A39E-D00173F3B060}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.VisualStudio.Project.17.0", "Src\CSharp\Microsoft.VisualStudio.Project.17.0.csproj", "{4054A1E1-6BB5-4D66-96BB-3ACD26680BAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{45EE8459-DC43-4274-A39E-D00173F3B060}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45EE8459-DC43-4274-A39E-D00173F3B060}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45EE8459-DC43-4274-A39E-D00173F3B060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4054A1E1-6BB5-4D66-96BB-3ACD26680BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4054A1E1-6BB5-4D66-96BB-3ACD26680BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4054A1E1-6BB5-4D66-96BB-3ACD26680BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4054A1E1-6BB5-4D66-96BB-3ACD26680BAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

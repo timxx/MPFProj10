@@ -21,6 +21,10 @@ using System.Resources;
 [assembly: AssemblyTitle("Microsoft.VisualStudio.Project.16.0")]
 [assembly: AssemblyProduct("Microsoft.VisualStudio.Project.16.0")]
 [assembly: Guid("a6a9cb31-3c78-45e8-9892-99cf03c62a90")]
+#elif DEV17
+[assembly: AssemblyTitle("Microsoft.VisualStudio.Project.17.0")]
+[assembly: AssemblyProduct("Microsoft.VisualStudio.Project.17.0")]
+[assembly: Guid("D3B2E051-37DD-4195-9CC0-22A24A0B040E")]
 #else
 #error Unknown target.
 #endif
