@@ -369,7 +369,11 @@ namespace Microsoft.VisualStudio.Project
 
         protected virtual void NavigateTo(object sender, EventArgs arguments)
         {
+#if DEV17PLUS
+            Microsoft.VisualStudio.Shell.TaskListItem task = sender as Microsoft.VisualStudio.Shell.TaskListItem;
+#else
             Microsoft.VisualStudio.Shell.Task task = sender as Microsoft.VisualStudio.Shell.Task;
+#endif
             if (task == null)
                 throw new ArgumentException("The sender should be a Task.", "sender");
 
@@ -418,7 +422,7 @@ namespace Microsoft.VisualStudio.Project
             Microsoft.VisualStudio.ErrorHandler.CallWithCOMConvention(() => mgr.NavigateToLineAndColumn(buffer, ref logicalView, task.Line, task.Column, task.Line, task.Column));
         }
 
-        #endregion
+#endregion
 
         #region output queue
 

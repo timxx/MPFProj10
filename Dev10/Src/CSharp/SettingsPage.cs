@@ -263,8 +263,11 @@ namespace Microsoft.VisualStudio.Project
 			{
 				this.active = true;
 
-
+#if DEV17PLUS
+				Control cGrid = Control.FromHandle(this.grid.Handle);
+#else
 				Control cGrid = Control.FromHandle(new IntPtr(this.grid.Handle));
+#endif
 
 				cGrid.Parent = Control.FromHandle(parent);//this.panel;
 				cGrid.Size = new Size(544, 294);
@@ -272,7 +275,11 @@ namespace Microsoft.VisualStudio.Project
 				cGrid.Visible = true;
 				this.grid.SetOption(_PROPERTYGRIDOPTION.PGOPT_TOOLBAR, false);
 				this.grid.GridSort = _PROPERTYGRIDSORT.PGSORT_CATEGORIZED | _PROPERTYGRIDSORT.PGSORT_ALPHABETICAL;
+#if DEV17PLUS
+				NativeMethods.SetParent(this.grid.Handle, this.panel.Handle);
+#else
 				NativeMethods.SetParent(new IntPtr(this.grid.Handle), this.panel.Handle);
+#endif
 				UpdateObjects();
 			}
 		}
@@ -446,9 +453,9 @@ namespace Microsoft.VisualStudio.Project
 			return (NativeMethods.IsDialogMessageA(this.panel.Handle, ref msg)) ? 0 : 1;
 		}
 
-		#endregion
+#endregion
 
-		#region helper methods
+#region helper methods
 
 		protected virtual ProjectConfig[] GetProjectConfigurations()
 		{
@@ -469,7 +476,11 @@ namespace Microsoft.VisualStudio.Project
 					Marshal.WriteIntPtr(ppUnk, p);
 					this.BindProperties();
 					// BUGBUG -- this is really bad casting a pointer to "int"...
+#if DEV17PLUS
+					this.grid.SetSelectedObjects(1, new IntPtr[] { ppUnk });
+#else
 					this.grid.SetSelectedObjects(1, ppUnk.ToInt32());
+#endif
 					this.grid.Refresh();
 				}
 				finally
@@ -485,9 +496,9 @@ namespace Microsoft.VisualStudio.Project
 				}
 			}
 		}
-		#endregion
+#endregion
 
-		#region IDisposable Members
+#region IDisposable Members
 
 		/// <summary>
 		/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
@@ -498,7 +509,7 @@ namespace Microsoft.VisualStudio.Project
 			GC.SuppressFinalize(this);
 		}
 
-		#endregion
+#endregion
 
 		protected virtual void Dispose(bool disposing)
 		{

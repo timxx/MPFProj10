@@ -2346,7 +2346,11 @@ namespace Microsoft.VisualStudio.Project
             {
                 Array contextParamsAsArray = contextParams;
 
+#if DEV17PLUS
+                int result = ivsExtensibility.RunWizardFile(wizardToRun, dlgOwner, ref contextParamsAsArray, out wizResultAsInt);
+#else
                 int result = ivsExtensibility.RunWizardFile(wizardToRun, (int)dlgOwner, ref contextParamsAsArray, out wizResultAsInt);
+#endif
 
                 if (!ErrorHandler.Succeeded(result) && result != VSConstants.OLE_E_PROMPTSAVECANCELLED)
                 {
@@ -4059,7 +4063,7 @@ namespace Microsoft.VisualStudio.Project
                 {
                     fileName = Path.GetFileNameWithoutExtension(newFileName);
                 }
-                // We want to be consistent in the error message and exception we throw. fileName could be for example #¤&%"¤&"%  and that would trigger an ArgumentException on Path.IsRooted.
+                // We want to be consistent in the error message and exception we throw. fileName could be for example #?%"?"%  and that would trigger an ArgumentException on Path.IsRooted.
                 catch (ArgumentException)
                 {
                     errorMessage = SR.GetString(SR.ErrorInvalidFileName, CultureInfo.CurrentUICulture);
@@ -4775,9 +4779,9 @@ namespace Microsoft.VisualStudio.Project
         protected virtual void FlushBuildLoggerContent()
         {
         }
-        #endregion
+#endregion
 
-        #region non-virtual methods
+#region non-virtual methods
 
         /// <summary>
         /// Suspends MSBuild
@@ -5392,9 +5396,9 @@ namespace Microsoft.VisualStudio.Project
             }
         }
 
-        #endregion
+#endregion
 
-        #region IVsGetCfgProvider Members
+#region IVsGetCfgProvider Members
         //=================================================================================
 
         public virtual int GetCfgProvider(out IVsCfgProvider p)
@@ -5404,18 +5408,18 @@ namespace Microsoft.VisualStudio.Project
             p = this.ConfigProvider;
             return (p == null ? VSConstants.E_NOTIMPL : VSConstants.S_OK);
         }
-        #endregion
+#endregion
 
-        #region IPersist Members
+#region IPersist Members
 
         public virtual int GetClassID(out Guid clsid)
         {
             clsid = this.ProjectGuid;
             return VSConstants.S_OK;
         }
-        #endregion
+#endregion
 
-        #region IPersistFileFormat Members
+#region IPersistFileFormat Members
 
         int IPersistFileFormat.GetClassID(out Guid clsid)
         {
@@ -5573,9 +5577,9 @@ namespace Microsoft.VisualStudio.Project
             // TODO: turn file watcher back on.
             return VSConstants.S_OK;
         }
-        #endregion
+#endregion
 
-        #region IVsProject3 Members
+#region IVsProject3 Members
 
         /// <summary>
         /// Callback from the additem dialog. Deals with adding new and existing items
@@ -6162,9 +6166,9 @@ namespace Microsoft.VisualStudio.Project
             return hr;
         }
 
-        #endregion
+#endregion
 
-        #region IVsProjectBuidSystem Members
+#region IVsProjectBuidSystem Members
         public virtual int SetHostObject(string targetName, string taskName, object hostObject)
         {
             Debug.Assert(targetName != null && taskName != null && this.buildProject != null && this.buildProject.Targets != null);
@@ -6219,9 +6223,9 @@ namespace Microsoft.VisualStudio.Project
             return VSConstants.S_OK;
         }
 
-        #endregion
+#endregion
 
-        #region IVsComponentUser methods
+#region IVsComponentUser methods
 
         /// <summary>
         /// Add Components to the Project.
@@ -6264,9 +6268,9 @@ namespace Microsoft.VisualStudio.Project
             }
             return VSConstants.S_OK;
         }
-        #endregion
+#endregion
 
-        #region IVsDependencyProvider Members
+#region IVsDependencyProvider Members
         public virtual int EnumDependencies(out IVsEnumDependencies enumDependencies)
         {
             enumDependencies = new EnumDependencies(this.buildDependencyList);
@@ -6279,9 +6283,9 @@ namespace Microsoft.VisualStudio.Project
             return VSConstants.S_OK;
         }
 
-        #endregion
+#endregion
 
-        #region IVsSccProject2 Members
+#region IVsSccProject2 Members
         /// <summary>
         /// This method is called to determine which files should be placed under source control for a given VSITEMID within this hierarchy.
         /// </summary>
@@ -6449,9 +6453,9 @@ namespace Microsoft.VisualStudio.Project
 
             return VSConstants.S_OK;
         }
-        #endregion
+#endregion
 
-        #region IVsProjectSpecialFiles Members
+#region IVsProjectSpecialFiles Members
         /// <summary>
         /// Allows you to query the project for special files and optionally create them. 
         /// </summary>
@@ -6468,9 +6472,9 @@ namespace Microsoft.VisualStudio.Project
             // We need to return S_OK, otherwise the property page tabs will not be shown.
             return VSConstants.E_NOTIMPL;
         }
-        #endregion
+#endregion
 
-        #region IAggregatedHierarchy Members
+#region IAggregatedHierarchy Members
 
         /// <summary>
         /// Get the inner object of an aggregated hierarchy
@@ -6481,9 +6485,9 @@ namespace Microsoft.VisualStudio.Project
             return this;
         }
 
-        #endregion
+#endregion
 
-        #region IBuildDependencyUpdate Members
+#region IBuildDependencyUpdate Members
 
         public virtual IVsBuildDependency[] BuildDependencies
         {
@@ -6519,9 +6523,9 @@ namespace Microsoft.VisualStudio.Project
             }
         }
 
-        #endregion
+#endregion
 
-        #region IReferenceDataProvider Members
+#region IReferenceDataProvider Members
         /// <summary>
         /// Returns the reference container node.
         /// </summary>
@@ -6531,17 +6535,17 @@ namespace Microsoft.VisualStudio.Project
             return this.FindChild(ReferenceContainerNode.ReferencesNodeVirtualName) as IReferenceContainer;
         }
 
-        #endregion
+#endregion
 
-        #region IProjectEventsListener Members
+#region IProjectEventsListener Members
         public virtual bool IsProjectEventsListener
         {
             get { return this.isProjectEventsListener; }
             set { this.isProjectEventsListener = value; }
         }
-        #endregion
+#endregion
 
-        #region IProjectEventsProvider Members
+#region IProjectEventsProvider Members
 
         /// <summary>
         /// Defines the provider for the project events
@@ -6566,9 +6570,9 @@ namespace Microsoft.VisualStudio.Project
             }
         }
 
-        #endregion
+#endregion
 
-        #region IVsAggregatableProject Members
+#region IVsAggregatableProject Members
 
         /// <summary>
         /// Retrieve the list of project GUIDs that are aggregated together to make this project.
@@ -6643,9 +6647,9 @@ namespace Microsoft.VisualStudio.Project
             return VSConstants.E_NOTIMPL;
         }
 
-        #endregion
+#endregion
 
-        #region IVsProjectFlavorCfgProvider Members
+#region IVsProjectFlavorCfgProvider Members
 
         int IVsProjectFlavorCfgProvider.CreateProjectFlavorCfg(IVsCfg pBaseProjectCfg, out IVsProjectFlavorCfg ppFlavorCfg)
         {
@@ -6655,9 +6659,9 @@ namespace Microsoft.VisualStudio.Project
             return VSConstants.S_OK;
         }
 
-        #endregion
+#endregion
 
-        #region IVsBuildPropertyStorage Members
+#region IVsBuildPropertyStorage Members
 
         /// <summary>
         /// Get the property of an item
@@ -6763,9 +6767,9 @@ namespace Microsoft.VisualStudio.Project
             return VSConstants.S_OK;
         }
 
-        #endregion
+#endregion
 
-		#region IVsDesignTimeAssemblyResolution methods
+#region IVsDesignTimeAssemblyResolution methods
 
 		public virtual int GetTargetFramework(out string ppTargetFramework)
 		{
@@ -6799,9 +6803,9 @@ namespace Microsoft.VisualStudio.Project
 			return VSConstants.S_OK;
 		}
 
-		#endregion
+#endregion
 
-		#region private helper methods
+#region private helper methods
 
         /// <summary>
         /// Add an item to the hierarchy based on the item path
@@ -7407,7 +7411,7 @@ namespace Microsoft.VisualStudio.Project
 			return paths.ToString();
 		}
 
-		#endregion
+#endregion
 
 		public virtual int UpdateTargetFramework(IVsHierarchy pHier, string currentTargetFramework, string newTargetFramework)
 		{
